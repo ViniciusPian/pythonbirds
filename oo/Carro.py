@@ -63,46 +63,55 @@ O   L
     >>> carro.calcular_direcao()
     'leste'
 """
-class Carro:
-    direcao = "norte"
-    velocidade = 0
+NORTE = 'norte'
+SUL = 'sul'
+LESTE = 'leste'
+OESTE = 'oeste'
+
+class Direcao:
+    def __init__(self):
+        self.valor = 'norte'
+    rotacao_a_direita_dct = {
+        NORTE: LESTE, LESTE: SUL, SUL: OESTE, OESTE: NORTE
+    }
+    rotacao_a_esquerda_dct = {
+        NORTE: OESTE, LESTE: NORTE, SUL: LESTE, OESTE: SUL
+    }
+    def girar_a_direita(self):
+        self.valor = self.rotacao_a_direita_dct[self.valor]
+    def girar_a_esquerda(self):
+        self.valor = self.rotacao_a_esquerda_dct[self.valor]
+
+class Motor:
+    def __init__(self):
+        self.velocidade = 0
+
+    def acelerar(self):
+        self.velocidade = velocidade + 1
+
+    def frear(self, velocidade):
+        if (velocidade > 2):
+            self.velocidade = velocidade - 2
+        else:
+            self.velocidade = 0
+
+
+
 def __init__(self, direcao, motor):
     self.direcao = direcao
     self.motor = motor
 
 @classmethod
-def acelerar(self, velocidade):
-    self.velocidade = velocidade + 1
+def motor(self, velocidade):
+    self.velocidade = velocidade
 
-def frear(self, velocidade):
-    if (velocidade>2):
-      self.velocidade = velocidade - 2
-    else:
-      self.velocidade = 0
 
-def girar_a_direita(self, direcao):
-    if(direcao = "norte"):
-        self.direcao = "leste"
-    if(direcao = "leste"):
-        self.direcao = "sul"
-    if(direcao = "sul"):
-        self.direcao = "oeste"
-    if(direcao = "oeste")
-        self.direcao = "norte"
-    else:
-        print("direcao invalida")
 
-def girar_a_esquerda(self, direcao):
-    if(direcao = "norte"):
-        self.direcao = "oeste"
-    if(direcao = "leste"):
-        self.direcao = "norte"
-    if(direcao = "sul"):
-        self.direcao = "leste"
-    if(direcao = "oeste")
-        self.direcao = "sul"
-    else:
-        print("direcao invalida")
+
+
+
+
+
 
 def calcular_direcao(self, direcao):
     return direcao
@@ -111,5 +120,3 @@ def calcular_velocidade(self, velocidade):
     return velocidade
 
 if __name__=='__main__':
-    carro.acelerar()
-    carro.calcula_velocidade()
