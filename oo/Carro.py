@@ -67,6 +67,28 @@ NORTE = 'norte'
 SUL = 'sul'
 LESTE = 'leste'
 OESTE = 'oeste'
+class Carro:
+    def __init__(self, direcao, motor):
+        self.direcao = direcao
+        self.motor = motor
+
+    def calcular_velocidade(self, velocidade):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        return self.motor.acelerar()
+
+    def frear(self):
+        return self.motor.frear()
+
+    def calcular_direcao(self, direcao):
+        return self.direcao.valor
+
+    def girar_a_direita(self):
+        self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        self.direcao.girar_a_esquerda()
 
 class Direcao:
     def __init__(self):
@@ -86,7 +108,7 @@ class Motor:
     def __init__(self):
         self.velocidade = 0
 
-    def acelerar(self):
+    def acelerar(self, velocidade):
         self.velocidade = velocidade + 1
 
     def frear(self, velocidade):
@@ -96,27 +118,9 @@ class Motor:
             self.velocidade = 0
 
 
-
 def __init__(self, direcao, motor):
     self.direcao = direcao
     self.motor = motor
 
-@classmethod
-def motor(self, velocidade):
-    self.velocidade = velocidade
-
-
-
-
-
-
-
-
-
-def calcular_direcao(self, direcao):
-    return direcao
-
-def calcular_velocidade(self, velocidade):
-    return velocidade
-
 if __name__=='__main__':
+  Carro.acelerar()
