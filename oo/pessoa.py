@@ -18,8 +18,11 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__=='__main__':
-    renzo = Homem(nome='Renzo')
+    renzo = Mutante(nome='Renzo')
     luciano = Homem(renzo, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(id(luciano))
@@ -28,7 +31,6 @@ if __name__=='__main__':
     print(luciano.idade)
     luciano.olhos=1
     del luciano.olhos
-    Pessoa.olhos=3
     for filho in luciano.filhos:
       print(filho.nome)
     luciano.sobrenome= 'Ramalho'
@@ -37,6 +39,7 @@ if __name__=='__main__':
     print(renzo.__dict__)
     print(Pessoa.olhos)
     print(luciano.olhos)
+    print(renzo.olhos)
     print(Pessoa.metodo_esttico(),luciano.metodo_esttico())
     print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
     pessoa = Pessoa('Anonimo')
