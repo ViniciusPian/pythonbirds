@@ -47,3 +47,4 @@ if __name__=='__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(renzo, Pessoa))
     print(isinstance(renzo, Homem))
+    print(renzo.olhos)
