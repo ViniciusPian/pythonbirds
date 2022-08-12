@@ -149,15 +149,16 @@ class Passaro(Ator):
     def _calcular_posicao_vertical(self, delta_t):
         y_atual = self._y_inicial
         angulo_radianos = self._angulo_de_lancamento
-        y_atual += self.velocidade_escalar * delta_t * math.sin(angulo_radianos)
-        y_atual -= (GRAVIDADE * (delta_t ** 2)) / 2
+        y_atual += (self.velocidade_escalar * delta_t * math.sin(angulo_radianos))
+        y_atual -= ((GRAVIDADE * (delta_t ** 2)) / 2)
         self.y = y_atual
 
     def _calcular_posicao_horizontal(self, delta_t):
         x_atual = self._x_inicial
         angulo_radianos = self._angulo_de_lancamento
-        x_atual += self.velocidade_escalar * delta_t*math.cos(angulo_radianos)
+        x_atual += (self.velocidade_escalar * delta_t * math.cos(angulo_radianos))
         self.x = x_atual
+
     def _esta_voando(self):
         return self.foi_lancado() and self.status == ATIVO
 
